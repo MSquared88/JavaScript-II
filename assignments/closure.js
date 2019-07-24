@@ -4,6 +4,7 @@
 function child(){
 
   function dad(){
+    let money = 400
     let allowance =  20
     return allowance
   }
