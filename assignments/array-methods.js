@@ -89,15 +89,38 @@ console.log(largeShirts);
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
 
-ticketPriceTotal = runners.reduce()
+ticketPriceTotal = runners.reduce((sum, item) => {
+    return sum + item.donation
+},0)
 
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - The event director needs all the runners emails to send them spam about all the other runs that will happen EVER!!
+let allEmails = runners.map(function(arr){
+        return arr.email
+});
 
-// Problem 2
+console.log(allEmails);
 
-// Problem 3
+// Problem 2 - the director now needs all the companies that the runners are from in alphabetical order for some reason 
+
+let companiesOrder = [];
+runners.forEach(function(item){
+     companiesOrder.push(item.company_name)
+});
+companiesOrder.sort();
+
+console.log(companiesOrder);
+
+// Problem 3 - the director now needs one random runner so they can recieve a gift
+
+let randomRunner = runners.filter(function(item){
+    return item.id === Math.floor(Math.random() * runners.length)
+});
+
+
+
+console.log(randomRunner);
