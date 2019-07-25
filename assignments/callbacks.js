@@ -30,21 +30,21 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 // problem 1
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-     return cb(arr);
+     return cb(arr.length);
 }
 
-getLength(items, function(arr) {
-  console.log(arr.length)
+getLength(items, function(length) {
+  console.log(length)
 });
 
 // problem 2
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  return cb(arr)
+  return cb(arr[arr.length -1])
 }
 
-last(items, function(arr){
-  console.log(arr.length - 1)
+last(items, function(lastItem){
+  console.log(lastItem)
 });
 
 
